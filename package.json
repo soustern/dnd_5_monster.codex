@@ -1,0 +1,22 @@
+{
+  "name": "dnd_5_monster.codex",
+  "version": "1.0.0",
+  "description": "Website for searching and visualizing information about DnD 5th edition monsters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soustern/dnd_5_monster.codex.git"
+  },
+  "author": "Rafael Antoniassi Vicechio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soustern/dnd_5_monster.codex/issues"
+  },
+  "homepage": "https://github.com/soustern/dnd_5_monster.codex#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
