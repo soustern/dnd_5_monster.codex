@@ -4,7 +4,8 @@
   "description": "Website for searching and visualizing information about DnD 5th edition monsters",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass sass/main.scss static/css/style.css -w",
+    "compile:flask": "flask --app app.py --debug run"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/soustern/dnd_5_monster.codex#readme",
   "devDependencies": {
+    "flask": "^0.2.10",
     "node-sass": "^8.0.0"
   }
 }

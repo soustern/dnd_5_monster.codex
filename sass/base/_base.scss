@@ -1,0 +1,31 @@
+// RESETS
+
+// // Universal reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// TWEAKS
+
+// // Change root font size | bcg color
+html {
+  // currently 16px, 62.4% to be 10
+  font-size: 62.5%;
+
+  // Fill whole HTML Document
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-darker,
+    $color-black
+  );
+  background-attachment: fixed;
+}
+
+// // Apply border box to be inherited
+body {
+  box-sizing: border-box;
+}

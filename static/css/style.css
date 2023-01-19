@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  background-image: linear-gradient(to right bottom, #160c20, #000);
+  background-attachment: fixed; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #fff; }
+
+.margin-top-300 {
+  margin-top: 3rem !important; }
+
+.margin-top-500 {
+  margin-top: 6rem !important; }
+
+.margin-top-700 {
+  margin-top: 9rem !important; }
+
+.margin-top-900 {
+  margin-top: 12rem !important; }
+
+.header {
+  height: 20vh;
+  width: 100%;
+  position: relative;
+  background: transparent; }
+  .header__img-area {
+    max-width: 60rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -75%); }
+  .header__img {
+    width: 100%;
+    -webkit-filter: drop-shadow(0 0 1rem #000);
+    filter: drop-shadow(0 1rem 1rem #000); }
+  .header::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(transparent, #000 60%), url(../img/background_img.jpg);
+    background-size: cover;
+    background-position: left;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 20%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 30%);
+    opacity: 90%; }
+
+.form {
+  position: relative; }
+  .form__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    padding: 1.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0.1rem solid rgba(255, 255, 255, 0.7);
+    border-radius: 5px 5px 5px 5px;
+    width: 100%; }
+    .form__input:focus {
+      outline: none; }
+    .form__input::placeholder {
+      font-weight: 200;
+      color: #fff; }
+  .form__label {
+    display: block;
+    text-align: left;
+    margin-left: 2rem;
+    opacity: 1;
+    transition: all 0.1s; }
+  .form__input:placeholder-shown ~ .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3.5rem); }
+  .form__button {
+    cursor: pointer;
+    position: absolute;
+    height: 5rem;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-left: 0.1rem solid rgba(255, 255, 255, 0.7);
+    border-radius: 0 5px 5px 0;
+    font-weight: 600;
+    color: inherit;
+    transform: translateX(-8.547rem);
+    margin: 0 0 0 auto;
+    transition: all 0.1s; }
+    .form__button:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+
+.form-area {
+  margin: 0 auto 0 auto;
+  max-width: 100rem;
+  padding: 0 1rem; }
+
+.content-area {
+  height: 60vh;
+  width: 100%; }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BOILERPLATE -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- IMPORT FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- IMPORT STYLESHEET -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <!-- IMPORT ICONS -->
+
+    <!-- SELECT FAVICON -->
+    <link rel="shortcut icon" href="../img/" type="image/x-icon" />
+
+    <!-- ESSENTIALS -->
+    <title>DnD 5th edition - Monster Codex</title>
+    <meta
+      name="description"
+      content="Website for searching and visualizing information about DnD 5th edition monsters"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__img-area">
+        <img src="/static/img/logo.png" alt="dnd logo" class="header__img" />
+      </div>
+    </header>
+    <main>
+      <div class="form-area | margin-top-700">
+        <form action="#" method="get" class="form">
+          <input
+            type="text"
+            class="form__input"
+            id="form__input"
+            placeholder="Search a monster"
+          />
+          <button type="submit" class="form__button">Search</button>
+          <label class="form__label" for="form__input">Ex.: acolyte</label>
+        </form>
+      </div>
+      <section class="content-area"></section>
+    </main>
+    <!-- <main>{% block main %} {% endblock main %}</main>
+    <footer>{% block footer %} {% endblock footer %}</footer> -->
+  </body>
+</html>

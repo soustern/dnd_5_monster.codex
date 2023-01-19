@@ -1,0 +1,44 @@
+.header {
+  height: 20vh;
+  width: 100%;
+  position: relative;
+  background: transparent;
+
+  &__img-area {
+    max-width: 60rem;
+
+    position: absolute;
+    left: 50%;
+
+    transform: translate(-50%, -75%);
+  }
+
+  &__img {
+    width: 100%;
+
+    // Apply shadow to png
+    -webkit-filter: drop-shadow(0 0 1rem $color-black);
+    filter: drop-shadow(0 1rem 1rem $color-black);
+  }
+
+  &::before {
+    // BOILERPLATE
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+
+    // bcg img settings
+    background-image: linear-gradient(transparent, $color-black 60%),
+      url(../img/background_img.jpg);
+    background-size: cover;
+    background-position: left;
+
+    // Webkit version needed to be usable on other browsers
+    // // Webkit version needs to go first
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 20%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 30%);
+
+    opacity: 90%;
+  }
+}

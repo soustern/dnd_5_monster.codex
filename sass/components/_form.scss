@@ -1,0 +1,90 @@
+.form {
+  position: relative;
+  &__input {
+    // Reset browser
+    font-family: inherit;
+    color: inherit;
+
+    font-size: inherit;
+    font-weight: 500;
+
+    // Always more padding on the sides
+    padding: 1.5rem 2rem;
+
+    background-color: rgba($color: $color-white, $alpha: 0);
+
+    border: 0.1rem solid rgba($color-white, 0.7);
+
+    border-radius: 5px 5px 5px 5px;
+
+    width: 100%;
+
+    // Transition settings
+    // transition: all 0.3s;
+
+    // Tweak focus state
+    &:focus {
+      outline: none;
+    }
+
+    // Change placeholder
+    &::placeholder {
+      font-weight: 200;
+      color: $color-white;
+    }
+  }
+
+  &__label {
+    display: block;
+    text-align: left;
+
+    margin-left: 2rem;
+
+    opacity: 1;
+
+    transition: all 0.1s;
+  }
+
+  // Define label motion
+  &__input:placeholder-shown ~ &__label {
+    opacity: 0;
+
+    // Remove from document at this ocasion
+    visibility: hidden;
+
+    transform: translateY(-3.5rem);
+  }
+
+  &__button {
+    cursor: pointer;
+
+    position: absolute;
+
+    height: 5rem;
+    padding: 0 2rem;
+
+    background-color: rgba($color: $color-white, $alpha: 0);
+
+    // Reset border values
+    border: none;
+
+    // Apply border where it is needed
+    border-left: 0.1rem solid rgba($color-white, 0.7);
+
+    border-radius: 0 5px 5px 0;
+
+    font-weight: 600;
+    color: inherit;
+
+    transform: translateX(-8.547rem);
+
+    margin: 0 0 0 auto;
+
+    // Transition settings
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: rgba($color: $color-white, $alpha: 0.1);
+    }
+  }
+}
