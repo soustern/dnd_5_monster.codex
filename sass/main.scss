@@ -1,5 +1,7 @@
 // // (This need to go first)
+
 @import "abstracts/variables"; // // // All functions
+
 @import "base/base"; // // // Base CSS code such as resets and html, body selectors tweaks
 
 // // Abstracts (These need to go second)
@@ -25,6 +27,8 @@
 @import "layout/header";
 
 // // Components
+
+@import "components/c-sheet";
 
 @import "components/form";
 

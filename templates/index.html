@@ -18,6 +18,12 @@
       href="{{ url_for('static', filename='css/style.css') }}"
     />
 
+    <!-- IMPORT STYLING SCRIPTS -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/style.js') }}"
+    ></script>
+
     <!-- IMPORT ICONS -->
 
     <!-- SELECT FAVICON -->
@@ -49,7 +55,102 @@
           <label class="form__label" for="form__input">Ex.: acolyte</label>
         </form>
       </div>
-      <section class="content-area"></section>
+      <section class="content | margin-top-700">
+        <article class="c-sheet">
+          <div
+            class="c-sheet__img"
+            style="background-image: url(https://www.dnd5eapi.co/api/images/monsters/{{ input.index }}.png);"
+          ></div>
+          <div class="c-sheet__info--general-1">
+            <!--  -->
+            <h2 class="name | heading-primary">
+              Name: <span class="name__value">{{ input.name }}</span>
+              <!-- White line separating this from what comes bellow -->
+              <hr class="margin-top-300" />
+            </h2>
+            <!--  -->
+            <h3 class="type | heading-secondary">
+              Type: <span class="type__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="alignment | heading-secondary">
+              Alignment: <span class="alignment__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="armor-class | heading-secondary">
+              Armor Class: <span class="armor-class__value"></span>
+            </h3>
+            <!--  -->
+          </div>
+          <div class="c-sheet__info--general-2">
+            <!--  -->
+            <h3 class="size | heading-secondary">
+              Size: <span class="size__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="hit-points | heading-secondary">
+              Hit points: <span class="hit-points__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="hit-dice | heading-secondary">
+              Hit dice: <span class="hit-dice__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="challenge-rating | heading-secondary">
+              Challenge rating: <span class="challenge-rating__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="xp | heading-secondary">
+              XP: <span class="xp__value"></span>
+            </h3>
+            <!--  -->
+          </div>
+          <div class="c-sheet__info--skills-1">
+            <!--  -->
+            <h3 class="strength | heading-secondary">
+              Strength: <span class="strength__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="dexterity | heading-secondary">
+              Dexterity: <span class="dexterity__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="constitution | heading-secondary">
+              Constitution: <span class="constitution__value"></span>
+            </h3>
+            <!--  -->
+          </div>
+          <div class="c-sheet__info--skills-2">
+            <!--  -->
+            <h3 class="intelligence | heading-secondary">
+              Intelligence: <span class="intelligence__value"></span>
+            </h3>
+            <!--  -->
+            <h3 class="wisdom | heading-secondary">
+              Wisdom: <span class="wisdom"></span>
+            </h3>
+            <!--  -->
+            <h3 class="charisma | heading-secondary">
+              Charisma: <span class="charisma__value"></span>
+            </h3>
+            <!--  -->
+          </div>
+          <div class="c-sheet__info--languages">
+            <h3 class="languages | heading-secondary">
+              Languages: <span class="languages__value"></span>
+            </h3>
+          </div>
+          <!-- <div class="c-sheet__info--s-abilities">
+            <h3 class="special-abilities">Special Abilities: </h3>
+          </div>
+          <div class="c-sheet__info--actions"></div> -->
+          <!-- <div class="c-sheet__info--proficiencies">
+            {% for item in proficiencies %}
+                {{ element|e }}
+            {% endfor %}
+          </div> -->
+        </article>
+      </section>
     </main>
     <!-- <main>{% block main %} {% endblock main %}</main>
     <footer>{% block footer %} {% endblock footer %}</footer> -->

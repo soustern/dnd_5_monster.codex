@@ -19,6 +19,7 @@
   "homepage": "https://github.com/soustern/dnd_5_monster.codex#readme",
   "devDependencies": {
     "flask": "^0.2.10",
+    "jquery": "^3.6.3",
     "node-sass": "^8.0.0"
   }
 }

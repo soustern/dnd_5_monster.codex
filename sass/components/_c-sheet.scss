@@ -1,0 +1,75 @@
+.c-sheet {
+  max-width: 150rem;
+  // height: 100%;
+
+  margin: 0 auto 0 auto;
+
+  // Use grid in this component
+  display: grid;
+  gap: 5rem;
+  // // Specify amount of columns
+  // grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  // grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__img {
+    background-color: white;
+    @extend %default-grid-style;
+    // Set amount of occupied rows
+
+    overflow: hidden;
+
+    grid-row: span 3;
+  }
+
+  &__info {
+    &--general {
+      &-1 {
+        @extend %default-grid-style;
+
+        // Style line
+        & hr {
+          border: none;
+          height: 0.1rem;
+          background-color: rgba($color-white, 0.2);
+        }
+
+        // Select every children but the last
+        & > *:not(:last-child) {
+          margin-bottom: 5rem;
+        }
+      }
+      &-2 {
+        @extend %default-grid-style;
+
+        // Select every children but the last
+        & > *:not(:last-child) {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+    &--skills {
+      &-1 {
+        @extend %default-grid-style;
+
+        // Select every children but the last
+        & > *:not(:last-child) {
+          margin-bottom: 5rem;
+        }
+      }
+      &-2 {
+        @extend %default-grid-style;
+
+        // Select every children but the last
+        & > *:not(:last-child) {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+    &--languages {
+      @extend %default-grid-style;
+      // Set amount of occupied columns
+      grid-column: span 2;
+    }
+  }
+}
