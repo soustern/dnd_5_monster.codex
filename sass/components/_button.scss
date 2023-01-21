@@ -1,0 +1,21 @@
+// MAIN BUTTONS
+
+.btn {
+  cursor: pointer;
+
+  // SPACING
+  border-radius: 5px 5px 5px 5px;
+  padding: 1rem;
+
+  // COLORS
+  background-color: rgba($color-primary-light, 0.1);
+  color: $color-white;
+
+  // SIZES
+  font-size: $font-size-500;
+
+  border: 1px solid rgba($color: $color-primary-light, $alpha: 0.5);
+
+  opacity: 0;
+  transition: all 1.5s;
+}

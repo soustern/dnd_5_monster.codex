@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- IMPORT JQUERY LIBRARY TO USE AJAX -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+
     <!-- IMPORT FONT -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -24,7 +31,11 @@
       src="{{ url_for('static', filename='js/style.js') }}"
     ></script>
 
-    <!-- IMPORT ICONS -->
+    <!-- IMPORT FETCH API SCRIPT -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/main.js') }}"
+    ></script>
 
     <!-- SELECT FAVICON -->
     <link rel="shortcut icon" href="../img/" type="image/x-icon" />
@@ -44,27 +55,28 @@
     </header>
     <main>
       <div class="form-area | margin-top-700">
-        <form action="#" method="get" class="form">
+        <form class="form">
           <input
             type="text"
             class="form__input"
-            id="form__input"
-            placeholder="Search a monster"
+            placeholder="Search for a monster"
+            id="monster"
+            name="monster"
           />
-          <button type="submit" class="form__button">Search</button>
+          <button type="submit" class="form__button" onclick="lookup()">
+            Search
+          </button>
           <label class="form__label" for="form__input">Ex.: acolyte</label>
         </form>
+        <button class="btn margin-top-300">&#10005;</button>
       </div>
-      <section class="content | margin-top-700">
+      <section class="content | margin-top-500">
         <article class="c-sheet">
-          <div
-            class="c-sheet__img"
-            style="background-image: url(https://www.dnd5eapi.co/api/images/monsters/{{ input.index }}.png);"
-          ></div>
+          <div class="c-sheet__img"></div>
           <div class="c-sheet__info--general-1">
             <!--  -->
             <h2 class="name | heading-primary">
-              Name: <span class="name__value">{{ input.name }}</span>
+              Name: <span class="name__value"></span>
               <!-- White line separating this from what comes bellow -->
               <hr class="margin-top-300" />
             </h2>

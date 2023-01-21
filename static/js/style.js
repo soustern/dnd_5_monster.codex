@@ -1,34 +1,33 @@
 // Run script once DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Select correct classes
-  let header = document.querySelector(".header");
-
-  let header__img_area = document.querySelector(".header__img-area");
-
-  let header__img = document.querySelector(".header__img");
-
-  let header_before = document.querySelector(".header::before");
 
   let form__input = document.querySelector(".form__input");
+
+  let button = document.querySelector(".btn");
 
   form__input.addEventListener("focusin", function () {
     //
     document.querySelector(".header__img-area").style.maxWidth = "17rem";
-    // //
-    // document.querySelector(".header__img-area").style.transform =
-    //   "translate(-50%, -10%)";
+    //
+    document.querySelector(".c-sheet").style.contentVisibility = "visible";
+    //
+    document.querySelector(".c-sheet").style.opacity = "1";
     //
     document.querySelector(".header").style.height = "0vh";
     //
+    document.querySelector(".btn").style.opacity = "1";
   });
-  form__input.addEventListener("focusout", function () {
-    // //
-    // document.querySelector(".header__img-area").style.maxWidth = "70rem";
-    // //
-    // document.querySelector(".header__img-area").style.transform =
-    //   "translate(-50%, -100%)";
-    // //
-    // document.querySelector(".header").style.height = "50vh";
-    // //
+  button.addEventListener("click", function () {
+    //
+    document.querySelector(".header").style.height = "50vh";
+    //
+    document.querySelector(".c-sheet").style.contentVisibility = "hidden";
+    //
+    document.querySelector(".c-sheet").style.opacity = "0";
+    //
+    document.querySelector(".header__img-area").style.maxWidth = "70rem";
+    //
+    document.querySelector(".btn").style.opacity = "1";
   });
 });

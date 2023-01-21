@@ -3,7 +3,6 @@ from helpers import lookup
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
-  input = lookup("acolyte")
-  return render_template("header.html", input=input)
+    return render_template("header.html")

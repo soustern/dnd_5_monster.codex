@@ -1,4 +1,8 @@
 .c-sheet {
+  content-visibility: hidden;
+  opacity: 0;
+  transition: all 1.5s;
+
   max-width: 150rem;
   // height: 100%;
 
@@ -13,13 +17,41 @@
   grid-template-columns: repeat(3, 1fr);
 
   &__img {
-    background-color: white;
     @extend %default-grid-style;
     // Set amount of occupied rows
 
     overflow: hidden;
 
     grid-row: span 3;
+
+    background-size: cover;
+    background-position: right;
+
+    // Remove image bellow border (This is a problem because the border has a opacity value)
+    // // Making it so we can see trough with the image appearing behind
+    // // // This makes the image appear where the padding ends, removing it from behind the border
+    background-clip: padding-box;
+
+    padding: 1px;
+
+    // Apply shadow
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+
+      transform: scale(1.3);
+
+      background-image: radial-gradient(transparent, $color-black 80%);
+    }
+
+    // Apply responsiveness
+    @media (max-width: 1530px) {
+      grid-row: span 1;
+      grid-column: span 3;
+      height: 30vh;
+    }
   }
 
   &__info {
@@ -38,6 +70,18 @@
         & > *:not(:last-child) {
           margin-bottom: 5rem;
         }
+
+        // Select every children but the last
+        & > * > * {
+          margin-left: 1rem;
+          color: $color-primary-light;
+        }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-row: span 1;
+          grid-column: span 3;
+        }
       }
       &-2 {
         @extend %default-grid-style;
@@ -45,6 +89,12 @@
         // Select every children but the last
         & > *:not(:last-child) {
           margin-bottom: 5rem;
+        }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-row: span 1;
+          grid-column: span 3;
         }
       }
     }
@@ -56,6 +106,12 @@
         & > *:not(:last-child) {
           margin-bottom: 5rem;
         }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-row: span 1;
+          grid-column: span 3;
+        }
       }
       &-2 {
         @extend %default-grid-style;
@@ -64,12 +120,24 @@
         & > *:not(:last-child) {
           margin-bottom: 5rem;
         }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-row: span 1;
+          grid-column: span 3;
+        }
       }
     }
     &--languages {
       @extend %default-grid-style;
       // Set amount of occupied columns
       grid-column: span 2;
+
+      // Apply responsiveness
+      @media (max-width: 1530px) {
+        grid-row: span 1;
+        grid-column: span 3;
+      }
     }
   }
 }

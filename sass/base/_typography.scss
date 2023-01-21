@@ -17,8 +17,13 @@ body {
 // // h1
 
 .heading-primary {
-  font-size: $font-size-700;
+  font-size: $font-size-500;
   line-height: 0;
+
+  // Apply responsiveness
+  @media (max-width: 1530px) {
+    font-size: $font-size-300;
+  }
 }
 
 .heading-secondary {
