@@ -18,20 +18,20 @@ html {
 body {
   box-sizing: border-box; }
 
-.c-sheet__info--general-1, .c-sheet__info--general-2, .c-sheet__info--skills-1, .c-sheet__info--skills-2, .c-sheet__info--proficiencies-item {
+.c-sheet__info--general-1, .c-sheet__info--general-2, .c-sheet__info--skills-1, .c-sheet__info--skills-2, .c-sheet__info--languages, .c-sheet__info--damage-v, .c-sheet__info--damage-r, .c-sheet__info--damage-i, .c-sheet__info--proficiencies-item, .c-sheet__info--s-abilities-item, .c-sheet__info--actions-item {
   border-radius: 5px 5px 5px 5px;
-  padding: 3rem;
+  padding: 3.5rem;
   background-color: rgba(129, 72, 166, 0.1); }
 
-.c-sheet__img, .c-sheet__info--languages {
+.c-sheet__img {
   border-radius: 5px 5px 5px 5px;
-  padding: 3rem;
+  padding: 3.5rem;
   background-color: rgba(129, 72, 166, 0.1);
   border: 1px solid rgba(129, 72, 166, 0.5); }
 
-.c-sheet__info--general, .c-sheet__info--skills, .c-sheet__info--proficiencies {
+.c-sheet__info--general, .c-sheet__info--skills, .c-sheet__info--misc, .c-sheet__info--proficiencies, .c-sheet__info--s-abilities, .c-sheet__info--actions {
   border-radius: 5px 5px 5px 5px;
-  padding: 2rem;
+  padding: 3.5rem;
   background-color: rgba(32, 19, 45, 0.1);
   border: 1px solid rgba(129, 72, 166, 0.5); }
 
@@ -110,12 +110,12 @@ body {
   max-width: 150rem;
   margin: 0 auto 0 auto;
   display: grid;
-  gap: 5rem;
+  gap: 3.5rem;
   grid-template-columns: repeat(3, 1fr); }
   .c-sheet__img {
     position: relative;
     overflow: hidden;
-    grid-row: span 3;
+    grid-row: span 2;
     background-size: cover;
     background-position: right;
     background-clip: padding-box;
@@ -207,16 +207,78 @@ body {
       .c-sheet__info--skills-2 {
         grid-row: span 1;
         grid-column: span 2; } }
+  .c-sheet__info--misc {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    transition: all 1s; }
+    .c-sheet__info--misc-heading {
+      text-align: center;
+      grid-column: span 2; }
   .c-sheet__info--languages {
-    grid-column: span 2; }
+    grid-column: span 1; }
     .c-sheet__info--languages > * > * {
       margin-left: 1rem;
+      line-height: 2.5rem;
       color: #8148a6; }
     @media (max-width: 1530px) {
       .c-sheet__info--languages {
         grid-row: span 1;
-        grid-column: span 3; }
+        grid-column: span 3;
+        text-align: center; }
+        .c-sheet__info--languages > * {
+          line-height: 2.5rem; }
         .c-sheet__info--languages > * > * {
+          margin-left: 0rem;
+          line-height: 2.5rem; } }
+  .c-sheet__info--damage-v {
+    grid-column: span 1; }
+    .c-sheet__info--damage-v > * > * {
+      margin-left: 1rem;
+      line-height: 2.5rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--damage-v {
+        grid-row: span 1;
+        grid-column: span 3;
+        text-align: center; }
+        .c-sheet__info--damage-v > * {
+          line-height: 2.5rem; }
+        .c-sheet__info--damage-v > * > * {
+          margin-left: 0rem;
+          line-height: 2.5rem; } }
+  .c-sheet__info--damage-r {
+    grid-column: span 1; }
+    .c-sheet__info--damage-r > * > * {
+      margin-left: 1rem;
+      line-height: 2.5rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--damage-r {
+        grid-row: span 1;
+        grid-column: span 3;
+        text-align: center; }
+        .c-sheet__info--damage-r > * {
+          line-height: 2.5rem; }
+        .c-sheet__info--damage-r > * > * {
+          margin-left: 0rem;
+          line-height: 2.5rem; } }
+  .c-sheet__info--damage-i {
+    grid-column: span 1; }
+    .c-sheet__info--damage-i > * > * {
+      margin-left: 1rem;
+      line-height: 2.5rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--damage-i {
+        grid-row: span 1;
+        grid-column: span 3;
+        text-align: center; }
+        .c-sheet__info--damage-i > * {
+          line-height: 2.5rem; }
+        .c-sheet__info--damage-i > * > * {
+          margin-left: 0rem;
           line-height: 2.5rem; } }
   .c-sheet__info--proficiencies {
     grid-column: span 3;
@@ -227,6 +289,33 @@ body {
     .c-sheet__info--proficiencies-heading {
       text-align: center;
       grid-column: span 4; }
+    .c-sheet__info--proficiencies-item > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+  .c-sheet__info--s-abilities {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    transition: all 1s; }
+    .c-sheet__info--s-abilities-heading {
+      text-align: center;
+      grid-column: span 4; }
+    .c-sheet__info--s-abilities-item > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+  .c-sheet__info--actions {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    transition: all 1s; }
+    .c-sheet__info--actions-heading {
+      text-align: center;
+      grid-column: span 4; }
+    .c-sheet__info--actions-item > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
 
 .form {
   position: relative; }

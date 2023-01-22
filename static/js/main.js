@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".form").submit(function (e) {
     e.preventDefault();
 
-    // THIS WAS CAUSING THE LOOKUP TO BE EXECUTED 2 TIMES RETURNING TWICE THE DATA FROM THE API
+    // THIS WAS CAUSING THE LOOKUP() FUNC TO BE EXECUTED 2 TIMES RETURNING TWICE THE DATA FROM THE API
     // return lookup();
 
     // WE MUST ONLY RETURN
@@ -171,7 +171,10 @@ async function lookup() {
     charisma__value.innerHTML = "Not found";
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
   // // Languages
+
   let languages__value = document.querySelector(".languages__value");
 
   // Change languages value
@@ -190,30 +193,233 @@ async function lookup() {
 
   ////////////////////////////////////////////////////////////////////////////////////////////
 
+  // // Damage vulnerabilities
+
+  let damage__vulnerabilities_value = document.querySelector(
+    ".damage__vulnerabilities--value"
+  );
+
+  // Change languages value
+  //Check if exists
+  if (json.damage_vulnerabilities === undefined) {
+    damage__vulnerabilities_value.innerHTML = "Not found";
+  }
+  // Check if no Language attributed to that query
+  if (json.damage_vulnerabilities == "") {
+    damage__vulnerabilities_value.innerHTML = "None";
+  }
+  // Check if query does not exist on database | does not produce a response
+  else {
+    damage__vulnerabilities_value.innerHTML = json.damage_vulnerabilities;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
+  // // Damage resistances
+
+  let damage__resistances_value = document.querySelector(
+    ".damage__resistances--value"
+  );
+
+  // Change languages value
+  //Check if exists
+  if (json.damage_resistances === undefined) {
+    damage__resistances_value.innerHTML = "Not found";
+  }
+  // Check if no Language attributed to that query
+  if (json.damage_resistances == "") {
+    damage__resistances_value.innerHTML = "None";
+  }
+  // Check if query does not exist on database | does not produce a response
+  else {
+    damage__resistances_value.innerHTML = json.damage_resistances;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
+  // // Damage immunities
+
+  let damage__immunities_value = document.querySelector(
+    ".damage__immunities--value"
+  );
+
+  // Change languages value
+  //Check if exists
+  if (json.damage_immunities === undefined) {
+    damage__immunities_value.innerHTML = "Not found";
+  }
+  // Check if no Language attributed to that query
+  if (json.damage_immunities == "") {
+    damage__immunities_value.innerHTML = "None";
+  }
+  // Check if query does not exist on database | does not produce a response
+  else {
+    damage__immunities_value.innerHTML = json.damage_immunities;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
   // // Proficiencies
 
   // Select correct element by class
   let proficiencies = document.querySelector(".c-sheet__info--proficiencies");
-  let test = 0;
+
+  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
+  // // The following line is necessary to remove what was created on a call that came before the current one
+  proficiencies.innerHTML = "";
+
+  // Since we removed everything, we must add the heading "Proficiencies again"
+  let proficiencies_heading = document.createElement("div");
+  proficiencies_heading.classList.add("c-sheet__info--proficiencies-heading");
+  proficiencies.appendChild(proficiencies_heading);
+
+  let heading = document.createElement("h2");
+  heading.classList.add("heading-primary");
+  proficiencies_heading.appendChild(heading);
+  // Add value of text
+  heading.innerHTML = "Proficiencies: ";
 
   // Iterate in the "json array" that is proficiencies
-  if (test != 2) {
-    // console.log(test);
-    // console.log(json.proficiencies);
-    json.proficiencies.forEach((item) => {
-      console.log(test);
-      test++;
-      let proficiencies_item = document.createElement("div");
-      proficiencies_item.classList.add("c-sheet__info--proficiencies-item");
-      proficiencies.appendChild(proficiencies_item);
+  json.proficiencies.forEach((item) => {
+    // Create the necessary elements the necessary amount of times
+    // // Create the element
+    let proficiencies_item = document.createElement("div");
+    // // Add class
+    proficiencies_item.classList.add("c-sheet__info--proficiencies-item");
+    // // Append it to be a children of the selected parent
+    proficiencies.appendChild(proficiencies_item);
 
-      let proficiency__name = document.createElement("h3");
-      proficiency__name.classList.add("proficiency__name");
-      proficiency__name.classList.add("heading-primary");
-      proficiencies_item.appendChild(proficiency__name);
-      proficiency__name.innerHTML = item.proficiency.name;
-    });
-  }
+    // // Repeat
+    let proficiency__name = document.createElement("h3");
+    proficiency__name.classList.add("proficiency__name");
+    // // Two classes, the same line two times
+    proficiency__name.classList.add("heading-primary");
+    proficiencies_item.appendChild(proficiency__name);
+    proficiency__name.innerHTML = item.proficiency.name;
+
+    // // Add value
+    let proficiency__value = document.createElement("h3");
+    proficiency__value.classList.add("proficiency__value");
+    proficiency__value.classList.add("heading-primary");
+    proficiencies_item.appendChild(proficiency__value);
+    proficiency__value.innerHTML = "Value: ";
+
+    // // Add value of value
+    let proficiency__value__value = document.createElement("span");
+    proficiency__value__value.classList.add("proficiency__value--value");
+    proficiency__value.appendChild(proficiency__value__value);
+    proficiency__value__value.innerHTML = item.value;
+  });
+
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
+  // // Special Abilities
+
+  // Select correct element by class
+  let s_abilities = document.querySelector(".c-sheet__info--s-abilities");
+
+  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
+  // // The following line is necessary to remove what was created on a call that came before the current one
+  s_abilities.innerHTML = "";
+
+  // Since we removed everything, we must add the heading "Proficiencies again"
+  let s_abilities_heading = document.createElement("div");
+  s_abilities_heading.classList.add("c-sheet__info--s-abilities-heading");
+  s_abilities.appendChild(s_abilities_heading);
+
+  let s_heading = document.createElement("h2");
+  s_heading.classList.add("heading-primary");
+  s_abilities_heading.appendChild(s_heading);
+  // Add value of text
+  s_heading.innerHTML = "Special Abilities: ";
+
+  // Iterate in the "json array" that is proficiencies
+  json.special_abilities.forEach((item) => {
+    console.log(item.name);
+    // Create the necessary elements the necessary amount of times
+    // // Create the element
+    let s_abilities_item = document.createElement("div");
+    // // Add class
+    s_abilities_item.classList.add("c-sheet__info--s-abilities-item");
+    // // Append it to be a children of the selected parent
+    s_abilities.appendChild(s_abilities_item);
+
+    // // Repeat
+    let s_abilities__name = document.createElement("h3");
+    s_abilities__name.classList.add("s-abilities__name");
+    // // Two classes, the same line two times
+    s_abilities__name.classList.add("heading-primary");
+    s_abilities_item.appendChild(s_abilities__name);
+    s_abilities__name.innerHTML = item.name;
+
+    // // Add value
+    let s_abilities__value = document.createElement("h3");
+    s_abilities__value.classList.add("s-abilities__value");
+    s_abilities__value.classList.add("heading-primary");
+    s_abilities_item.appendChild(s_abilities__value);
+    s_abilities__value.innerHTML = "Desc.: ";
+
+    // // Add value of value
+    let s_abilities__value__value = document.createElement("span");
+    s_abilities__value__value.classList.add("s-abilities__value--value");
+    s_abilities__value.appendChild(s_abilities__value__value);
+    s_abilities__value__value.innerHTML = item.desc;
+  });
+
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
+  // // Actions
+
+  // Select correct element by class
+  let actions = document.querySelector(".c-sheet__info--actions");
+
+  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
+  // // The following line is necessary to remove what was created on a call that came before the current one
+  s_abilities.innerHTML = "";
+
+  // Since we removed everything, we must add the heading "Proficiencies again"
+  let s_abilities_heading = document.createElement("div");
+  s_abilities_heading.classList.add("c-sheet__info--s-abilities-heading");
+  s_abilities.appendChild(s_abilities_heading);
+
+  let s_heading = document.createElement("h2");
+  s_heading.classList.add("heading-primary");
+  s_abilities_heading.appendChild(s_heading);
+  // Add value of text
+  s_heading.innerHTML = "Special Abilities: ";
+
+  // Iterate in the "json array" that is proficiencies
+  json.special_abilities.forEach((item) => {
+    console.log(item.name);
+    // Create the necessary elements the necessary amount of times
+    // // Create the element
+    let s_abilities_item = document.createElement("div");
+    // // Add class
+    s_abilities_item.classList.add("c-sheet__info--s-abilities-item");
+    // // Append it to be a children of the selected parent
+    s_abilities.appendChild(s_abilities_item);
+
+    // // Repeat
+    let s_abilities__name = document.createElement("h3");
+    s_abilities__name.classList.add("s-abilities__name");
+    // // Two classes, the same line two times
+    s_abilities__name.classList.add("heading-primary");
+    s_abilities_item.appendChild(s_abilities__name);
+    s_abilities__name.innerHTML = item.name;
+
+    // // Add value
+    let s_abilities__value = document.createElement("h3");
+    s_abilities__value.classList.add("s-abilities__value");
+    s_abilities__value.classList.add("heading-primary");
+    s_abilities_item.appendChild(s_abilities__value);
+    s_abilities__value.innerHTML = "Desc.: ";
+
+    // // Add value of value
+    let s_abilities__value__value = document.createElement("span");
+    s_abilities__value__value.classList.add("s-abilities__value--value");
+    s_abilities__value.appendChild(s_abilities__value__value);
+    s_abilities__value__value.innerHTML = item.desc;
+  });
 }
 
 // This function receives a string, removes any whitespace at the beginning and end,

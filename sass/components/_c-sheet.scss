@@ -10,7 +10,7 @@
 
   // Use grid in this component
   display: grid;
-  gap: 5rem;
+  gap: 3.5rem;
 
   // // Specify amount of columns
   // grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
@@ -25,7 +25,7 @@
     overflow: hidden;
 
     // Set amount of occupied rows
-    grid-row: span 3;
+    grid-row: span 2;
 
     background-size: cover;
     background-position: right;
@@ -205,14 +205,30 @@
         }
       }
     }
+    &--misc {
+      @extend %section-grid-style;
+      grid-column: span 3;
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      transition: all 1s;
+      // Style line under the name
+      &-heading {
+        text-align: center;
+        grid-column: span 2;
+      }
+    }
     &--languages {
-      @extend %outside-grid-style;
+      @extend %default-grid-style;
       // Set amount of occupied columns
-      grid-column: span 2;
+      grid-column: span 1;
 
       // Select every children of every children
       & > * > * {
         margin-left: 1rem;
+        line-height: 2.5rem;
         color: $color-primary-light;
       }
 
@@ -221,8 +237,109 @@
         grid-row: span 1;
         grid-column: span 3;
 
+        text-align: center;
+
+        // Select all children
+        & > * {
+          line-height: 2.5rem;
+        }
+
         // Prevent paragraph overflow and bugs by adding some line height
         & > * > * {
+          margin-left: 0rem;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    &--damage-v {
+      @extend %default-grid-style;
+      // Set amount of occupied columns
+      grid-column: span 1;
+
+      // Select every children of every children
+      & > * > * {
+        margin-left: 1rem;
+        line-height: 2.5rem;
+        color: $color-primary-light;
+      }
+
+      // Apply responsiveness
+      @media (max-width: 1530px) {
+        grid-row: span 1;
+        grid-column: span 3;
+
+        text-align: center;
+
+        // Select all children
+        & > * {
+          line-height: 2.5rem;
+        }
+
+        // Prevent paragraph overflow and bugs by adding some line height
+        & > * > * {
+          margin-left: 0rem;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    &--damage-r {
+      @extend %default-grid-style;
+      // Set amount of occupied columns
+      grid-column: span 1;
+
+      // Select every children of every children
+      & > * > * {
+        margin-left: 1rem;
+        line-height: 2.5rem;
+        color: $color-primary-light;
+      }
+
+      // Apply responsiveness
+      @media (max-width: 1530px) {
+        grid-row: span 1;
+        grid-column: span 3;
+
+        text-align: center;
+
+        // Select all children
+        & > * {
+          line-height: 2.5rem;
+        }
+
+        // Prevent paragraph overflow and bugs by adding some line height
+        & > * > * {
+          margin-left: 0rem;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    &--damage-i {
+      @extend %default-grid-style;
+      // Set amount of occupied columns
+      grid-column: span 1;
+
+      // Select every children of every children
+      & > * > * {
+        margin-left: 1rem;
+        line-height: 2.5rem;
+        color: $color-primary-light;
+      }
+
+      // Apply responsiveness
+      @media (max-width: 1530px) {
+        grid-row: span 1;
+        grid-column: span 3;
+
+        text-align: center;
+
+        // Select all children
+        & > * {
+          line-height: 2.5rem;
+        }
+
+        // Prevent paragraph overflow and bugs by adding some line height
+        & > * > * {
+          margin-left: 0rem;
           line-height: 2.5rem;
         }
       }
@@ -244,6 +361,62 @@
 
       &-item {
         @extend %default-grid-style;
+
+        // Select every children of every children
+        & > * > * {
+          margin-left: 1rem;
+          color: $color-primary-light;
+        }
+      }
+    }
+    &--s-abilities {
+      @extend %section-grid-style;
+      grid-column: span 3;
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      transition: all 1s;
+      // Style line under the name
+      &-heading {
+        text-align: center;
+        grid-column: span 4;
+      }
+
+      &-item {
+        @extend %default-grid-style;
+
+        // Select every children of every children
+        & > * > * {
+          margin-left: 1rem;
+          color: $color-primary-light;
+        }
+      }
+    }
+    &--actions {
+      @extend %section-grid-style;
+      grid-column: span 3;
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      transition: all 1s;
+      // Style line under the name
+      &-heading {
+        text-align: center;
+        grid-column: span 4;
+      }
+
+      &-item {
+        @extend %default-grid-style;
+
+        // Select every children of every children
+        & > * > * {
+          margin-left: 1rem;
+          color: $color-primary-light;
+        }
       }
     }
   }
