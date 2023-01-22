@@ -38,7 +38,11 @@
     ></script>
 
     <!-- SELECT FAVICON -->
-    <link rel="shortcut icon" href="../img/" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='img/favicon.png') }}"
+      type="image/x-icon"
+    />
 
     <!-- ESSENTIALS -->
     <title>DnD 5th edition - Monster Codex</title>
@@ -72,90 +76,145 @@
       </div>
       <section class="content | margin-top-500">
         <article class="c-sheet">
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
           <div class="c-sheet__img"></div>
-          <div class="c-sheet__info--general-1">
-            <!--  -->
-            <h2 class="name | heading-primary">
-              Name: <span class="name__value"></span>
-              <!-- White line separating this from what comes bellow -->
-              <hr class="margin-top-300" />
-            </h2>
-            <!--  -->
-            <h3 class="type | heading-secondary">
-              Type: <span class="type__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="alignment | heading-secondary">
-              Alignment: <span class="alignment__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="armor-class | heading-secondary">
-              Armor Class: <span class="armor-class__value"></span>
-            </h3>
-            <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <div class="c-sheet__info--general">
+            <div class="c-sheet__info--general-heading">
+              <h2 class="heading-primary">General Information:</h2>
+            </div>
+            <div class="c-sheet__info--general-1">
+              <!--  -->
+              <h2 class="name | heading-primary">
+                Name: <span class="name__value"></span>
+                <!-- White line separating this from what comes bellow -->
+                <hr class="margin-top-300" />
+              </h2>
+              <!--  -->
+              <h3 class="type | heading-secondary">
+                Type: <span class="type__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="alignment | heading-secondary">
+                Alignment: <span class="alignment__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="armor-class | heading-secondary">
+                Armor Class: <span class="armor-class__value"></span>
+              </h3>
+              <!--  -->
+            </div>
+            <div class="c-sheet__info--general-2">
+              <!--  -->
+              <h3 class="size | heading-secondary">
+                Size: <span class="size__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="hit-points | heading-secondary">
+                Hit points: <span class="hit-points__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="hit-dice | heading-secondary">
+                Hit dice: <span class="hit-dice__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="challenge-rating | heading-secondary">
+                Challenge rating: <span class="challenge-rating__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="xp | heading-secondary">
+                XP: <span class="xp__value"></span>
+              </h3>
+              <!--  -->
+            </div>
           </div>
-          <div class="c-sheet__info--general-2">
-            <!--  -->
-            <h3 class="size | heading-secondary">
-              Size: <span class="size__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="hit-points | heading-secondary">
-              Hit points: <span class="hit-points__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="hit-dice | heading-secondary">
-              Hit dice: <span class="hit-dice__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="challenge-rating | heading-secondary">
-              Challenge rating: <span class="challenge-rating__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="xp | heading-secondary">
-              XP: <span class="xp__value"></span>
-            </h3>
-            <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <div class="c-sheet__info--skills">
+            <div class="c-sheet__info--skills-heading">
+              <h2 class="heading-primary">Stats:</h2>
+            </div>
+            <div class="c-sheet__info--skills-1">
+              <!--  -->
+              <h3 class="strength | heading-secondary">
+                Strength: <span class="strength__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="dexterity | heading-secondary">
+                Dexterity: <span class="dexterity__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="constitution | heading-secondary">
+                Constitution: <span class="constitution__value"></span>
+              </h3>
+              <!--  -->
+            </div>
+            <div class="c-sheet__info--skills-2">
+              <!--  -->
+              <h3 class="intelligence | heading-secondary">
+                Intelligence: <span class="intelligence__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="wisdom | heading-secondary">
+                Wisdom: <span class="wisdom__value"></span>
+              </h3>
+              <!--  -->
+              <h3 class="charisma | heading-secondary">
+                Charisma: <span class="charisma__value"></span>
+              </h3>
+              <!--  -->
+            </div>
           </div>
-          <div class="c-sheet__info--skills-1">
-            <!--  -->
-            <h3 class="strength | heading-secondary">
-              Strength: <span class="strength__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="dexterity | heading-secondary">
-              Dexterity: <span class="dexterity__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="constitution | heading-secondary">
-              Constitution: <span class="constitution__value"></span>
-            </h3>
-            <!--  -->
-          </div>
-          <div class="c-sheet__info--skills-2">
-            <!--  -->
-            <h3 class="intelligence | heading-secondary">
-              Intelligence: <span class="intelligence__value"></span>
-            </h3>
-            <!--  -->
-            <h3 class="wisdom | heading-secondary">
-              Wisdom: <span class="wisdom"></span>
-            </h3>
-            <!--  -->
-            <h3 class="charisma | heading-secondary">
-              Charisma: <span class="charisma__value"></span>
-            </h3>
-            <!--  -->
-          </div>
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
           <div class="c-sheet__info--languages">
             <h3 class="languages | heading-secondary">
               Languages: <span class="languages__value"></span>
             </h3>
           </div>
-          <!-- <div class="c-sheet__info--s-abilities">
-            <h3 class="special-abilities">Special Abilities: </h3>
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <div class="c-sheet__info--proficiencies">
+            <div class="c-sheet__info--proficiencies-heading">
+              <h2 class="heading-primary">Proficiencies:</h2>
+            </div>
+            <!-- <div class="c-sheet__info--proficiencies-item">
+              <h3 class="proficiency__name heading-primary">
+                Saving Throw: CHA
+              </h3>
+              <h3 class="proficiency__value heading-primary">
+                Value: <span class="proficiency__value--value">22</span>
+              </h3>
+            </div> -->
           </div>
-          <div class="c-sheet__info--actions"></div> -->
+          <!-- <div class="c-sheet__info--actions"></div> -->
           <!-- <div class="c-sheet__info--proficiencies">
             {% for item in proficiencies %}
                 {{ element|e }}

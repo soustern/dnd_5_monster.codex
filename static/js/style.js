@@ -18,16 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
     //
     document.querySelector(".btn").style.opacity = "1";
   });
+
   button.addEventListener("click", function () {
+    //
+    document.querySelector(".c-sheet").style.opacity = "0";
     //
     document.querySelector(".header").style.height = "50vh";
     //
     document.querySelector(".c-sheet").style.contentVisibility = "hidden";
     //
-    document.querySelector(".c-sheet").style.opacity = "0";
-    //
     document.querySelector(".header__img-area").style.maxWidth = "70rem";
     //
-    document.querySelector(".btn").style.opacity = "1";
+    document.querySelector(".btn").style.opacity = "0";
   });
 });

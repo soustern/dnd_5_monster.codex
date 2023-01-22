@@ -28,6 +28,11 @@ html {
   background-size: 150%;
   background-position: top;
   background-repeat: no-repeat;
+
+  // Disable scrollbar from ever appearing
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // // Apply border box to be inherited

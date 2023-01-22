@@ -12,14 +12,27 @@ html {
   background-size: 150%;
   background-position: top;
   background-repeat: no-repeat; }
+  html::-webkit-scrollbar {
+    display: none; }
 
 body {
   box-sizing: border-box; }
 
-.c-sheet__img, .c-sheet__info--general-1, .c-sheet__info--general-2, .c-sheet__info--skills-1, .c-sheet__info--skills-2, .c-sheet__info--languages {
+.c-sheet__info--general-1, .c-sheet__info--general-2, .c-sheet__info--skills-1, .c-sheet__info--skills-2, .c-sheet__info--proficiencies-item {
+  border-radius: 5px 5px 5px 5px;
+  padding: 3rem;
+  background-color: rgba(129, 72, 166, 0.1); }
+
+.c-sheet__img, .c-sheet__info--languages {
   border-radius: 5px 5px 5px 5px;
   padding: 3rem;
   background-color: rgba(129, 72, 166, 0.1);
+  border: 1px solid rgba(129, 72, 166, 0.5); }
+
+.c-sheet__info--general, .c-sheet__info--skills, .c-sheet__info--proficiencies {
+  border-radius: 5px 5px 5px 5px;
+  padding: 2rem;
+  background-color: rgba(32, 19, 45, 0.1);
   border: 1px solid rgba(129, 72, 166, 0.5); }
 
 body {
@@ -31,14 +44,16 @@ body {
   letter-spacing: 0.1rem; }
 
 .heading-primary {
-  font-size: 2rem;
-  line-height: 0; }
-  @media (max-width: 1530px) {
-    .heading-primary {
-      font-size: 1.5rem; } }
+  font-size: 1.5rem;
+  line-height: 2.5rem; }
 
 .heading-secondary {
   font-size: 1.5rem;
+  line-height: 0; }
+
+.heading-separator {
+  font-size: 500;
+  font-weight: 500;
   line-height: 0; }
 
 .margin-top-100 {
@@ -55,6 +70,9 @@ body {
 
 .margin-top-900 {
   margin-top: 12rem !important; }
+
+.align-center {
+  text-align: center; }
 
 .header {
   height: 50vh;
@@ -95,61 +113,120 @@ body {
   gap: 5rem;
   grid-template-columns: repeat(3, 1fr); }
   .c-sheet__img {
+    position: relative;
     overflow: hidden;
     grid-row: span 3;
     background-size: cover;
     background-position: right;
     background-clip: padding-box;
-    padding: 1px; }
+    padding: 1px;
+    text-align: center; }
+    .c-sheet__img::before {
+      content: "If the image doesn`t appear, it is unavailable";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -20; }
     .c-sheet__img::after {
       content: "";
       display: block;
       height: 100%;
       width: 100%;
       transform: scale(1.3);
-      background-image: radial-gradient(transparent, #000 80%); }
+      background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.7) 70%); }
     @media (max-width: 1530px) {
       .c-sheet__img {
         grid-row: span 1;
         grid-column: span 3;
         height: 30vh; } }
-  .c-sheet__info--general-1 hr {
-    border: none;
-    height: 0.1rem;
-    background-color: rgba(255, 255, 255, 0.2); }
-  .c-sheet__info--general-1 > *:not(:last-child) {
-    margin-bottom: 5rem; }
-  .c-sheet__info--general-1 > * > * {
-    margin-left: 1rem;
-    color: #8148a6; }
-  @media (max-width: 1530px) {
-    .c-sheet__info--general-1 {
-      grid-row: span 1;
-      grid-column: span 3; } }
-  .c-sheet__info--general-2 > *:not(:last-child) {
-    margin-bottom: 5rem; }
-  @media (max-width: 1530px) {
-    .c-sheet__info--general-2 {
-      grid-row: span 1;
-      grid-column: span 3; } }
-  .c-sheet__info--skills-1 > *:not(:last-child) {
-    margin-bottom: 5rem; }
-  @media (max-width: 1530px) {
-    .c-sheet__info--skills-1 {
-      grid-row: span 1;
-      grid-column: span 3; } }
-  .c-sheet__info--skills-2 > *:not(:last-child) {
-    margin-bottom: 5rem; }
-  @media (max-width: 1530px) {
-    .c-sheet__info--skills-2 {
-      grid-row: span 1;
-      grid-column: span 3; } }
+  .c-sheet__info--general {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--general {
+        grid-row: span 1;
+        grid-column: span 3; } }
+    .c-sheet__info--general-heading {
+      text-align: center;
+      grid-column: span 2; }
+    .c-sheet__info--general-1 hr {
+      border: none;
+      height: 0.1rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-inline-start: 0;
+      margin-inline-end: 0; }
+    .c-sheet__info--general-1 > *:not(:last-child) {
+      margin-bottom: 5rem; }
+    .c-sheet__info--general-1 > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--general-1 {
+        grid-row: span 1;
+        grid-column: span 2; } }
+    .c-sheet__info--general-2 > *:not(:last-child) {
+      margin-bottom: 5rem; }
+    .c-sheet__info--general-2 > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--general-2 {
+        grid-row: span 1;
+        grid-column: span 2; } }
+  .c-sheet__info--skills {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--skills {
+        grid-row: span 1;
+        grid-column: span 3; } }
+    .c-sheet__info--skills-heading {
+      text-align: center;
+      grid-column: span 2; }
+    .c-sheet__info--skills-1 > *:not(:last-child) {
+      margin-bottom: 5rem; }
+    .c-sheet__info--skills-1 > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--skills-1 {
+        grid-row: span 1;
+        grid-column: span 2; } }
+    .c-sheet__info--skills-2 > *:not(:last-child) {
+      margin-bottom: 5rem; }
+    .c-sheet__info--skills-2 > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+    @media (max-width: 1530px) {
+      .c-sheet__info--skills-2 {
+        grid-row: span 1;
+        grid-column: span 2; } }
   .c-sheet__info--languages {
     grid-column: span 2; }
+    .c-sheet__info--languages > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
     @media (max-width: 1530px) {
       .c-sheet__info--languages {
         grid-row: span 1;
-        grid-column: span 3; } }
+        grid-column: span 3; }
+        .c-sheet__info--languages > * > * {
+          line-height: 2.5rem; } }
+  .c-sheet__info--proficiencies {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    transition: all 1s; }
+    .c-sheet__info--proficiencies-heading {
+      text-align: center;
+      grid-column: span 4; }
 
 .form {
   position: relative; }
@@ -204,7 +281,7 @@ body {
   font-size: 2rem;
   border: 1px solid rgba(129, 72, 166, 0.5);
   opacity: 0;
-  transition: all 1.5s; }
+  transition: all 0.5s; }
 
 .form-area {
   margin: 0 auto 0 auto;
@@ -214,4 +291,4 @@ body {
 
 .content {
   width: 100%;
-  padding: 0 1rem; }
+  padding: 0 3rem; }
