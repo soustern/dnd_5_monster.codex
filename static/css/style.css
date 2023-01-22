@@ -18,7 +18,7 @@ html {
 body {
   box-sizing: border-box; }
 
-.c-sheet__info--general-1, .c-sheet__info--general-2, .c-sheet__info--skills-1, .c-sheet__info--skills-2, .c-sheet__info--languages, .c-sheet__info--damage-v, .c-sheet__info--damage-r, .c-sheet__info--damage-i, .c-sheet__info--proficiencies-item, .c-sheet__info--s-abilities-item, .c-sheet__info--actions-item {
+.c-sheet__info--general-1, .c-sheet__info--general-2, .c-sheet__info--skills-1, .c-sheet__info--skills-2, .c-sheet__info--languages, .c-sheet__info--damage-v, .c-sheet__info--damage-r, .c-sheet__info--damage-i, .c-sheet__info--proficiencies-item, .c-sheet__info--s-abilities-item, .c-sheet__info--actions-item, .c-sheet__info--l-actions-item {
   border-radius: 5px 5px 5px 5px;
   padding: 3.5rem;
   background-color: rgba(129, 72, 166, 0.1); }
@@ -29,7 +29,7 @@ body {
   background-color: rgba(129, 72, 166, 0.1);
   border: 1px solid rgba(129, 72, 166, 0.5); }
 
-.c-sheet__info--general, .c-sheet__info--skills, .c-sheet__info--misc, .c-sheet__info--proficiencies, .c-sheet__info--s-abilities, .c-sheet__info--actions {
+.c-sheet__info--general, .c-sheet__info--skills, .c-sheet__info--misc, .c-sheet__info--proficiencies, .c-sheet__info--s-abilities, .c-sheet__info--actions, .c-sheet__info--l-actions {
   border-radius: 5px 5px 5px 5px;
   padding: 3.5rem;
   background-color: rgba(32, 19, 45, 0.1);
@@ -312,8 +312,20 @@ body {
     transition: all 1s; }
     .c-sheet__info--actions-heading {
       text-align: center;
-      grid-column: span 4; }
+      grid-column: span 2; }
     .c-sheet__info--actions-item > * > * {
+      margin-left: 1rem;
+      color: #8148a6; }
+  .c-sheet__info--l-actions {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    transition: all 1s; }
+    .c-sheet__info--l-actions-heading {
+      text-align: center;
+      grid-column: span 2; }
+    .c-sheet__info--l-actions-item > * > * {
       margin-left: 1rem;
       color: #8148a6; }
 

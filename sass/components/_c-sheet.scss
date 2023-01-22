@@ -406,7 +406,32 @@
       // Style line under the name
       &-heading {
         text-align: center;
-        grid-column: span 4;
+        grid-column: span 2;
+      }
+
+      &-item {
+        @extend %default-grid-style;
+
+        // Select every children of every children
+        & > * > * {
+          margin-left: 1rem;
+          color: $color-primary-light;
+        }
+      }
+    }
+    &--l-actions {
+      @extend %section-grid-style;
+      grid-column: span 3;
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      transition: all 1s;
+      // Style line under the name
+      &-heading {
+        text-align: center;
+        grid-column: span 2;
       }
 
       &-item {
