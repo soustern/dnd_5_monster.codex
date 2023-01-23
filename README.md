@@ -4,22 +4,22 @@ Link: https://dnd-5-monster-codex-fsuu6cic3-soustern.vercel.app/
 
 ## Introduction
 
-This is a small web app that lets you search and visualise information about all Dungeons and Dragons monster present at the following database: http://www.dnd5eapi.co/
+This is a small web app that lets you search and visualise information about all Dungeons and Dragons monsters present at the following database: http://www.dnd5eapi.co/
 
 The data brought back from the API is presented on the front-end in an orderly and aesthetically pleasing manner. While designing the app, a process that had mobile as the main focus, a lot of care has been taken to make sure a hierarchy of colors and sizes was well defined and in place.
 
-Fluidity of content a clarity of information was achieved through the whole project.
+Fluidity of content and clarity of information were achieved through the whole project.
 
 ## Technologies Used
 
 ### NPM
 
-This package manager was the foundation of the project, being the responsibility for setting up everything used. Two custom scripts were made to quickly set up a flask server (debug mode on) and compile a main SASS file into a main CSS file.
+This package manager was the foundation of the project, being responsible for setting up everything. Two custom scripts were made to quickly get a flask server (debug mode on) running and compile a main SASS file into a main CSS file.
 
 ### HTML
 
 A good deal of focus was put into making the markup semantic, and the principles of BEM (Block, Element, Modifier) were applied to the class names. 
-Either way, there is massive room for improvement and the app accessibility may be poor at best.
+Either way, there is massive room for improvement and the accessibility side of the app may be poor at best.
 
 ### SASS
 
@@ -28,18 +28,18 @@ As for folder structure, the 7 to 1 model was used (seven folders worth of files
 
 ### JavaScript
 
-This language was used extensively, being responsible for connecting to the API, manipulating the DOM, formatting user input and preventing the default behavior when necessary. Although handy and performant, the structure of the code could have been much more organised and fragmented in multiple components.
+This language was used extensively, being responsible for connecting to the API, manipulating the DOM, formatting user input and preventing default behavior when necessary. Although handy and performant, the structure of the code could be much more organised and fragmented in multiple components.
 
 ### Flask
 
-Being a micro-framework, flask presented itself as an amazing tool for quickly setting up the routing structure. It also worked well as a personal development environment that was very simple to set up.
-But, in hindsight, I can see how this project could have worked out without flask, making it not necessary.
+Being a micro-framework, flask presented itself as an amazing tool for quickly setting up the routing structure. It also worked well as a personal development environment that was very simple get up and running.
+But, in hindsight, I can see how this project would have worked without flask, making it not necessary.
 
 ## Resources
 
 ### Stack Overflow
 
-Stack Overflow was very useful for finding solutions about very specific bugs. Odds where someone had already asked about that before.
+Stack Overflow was very useful for finding solutions about very specific bugs. Odds were someone had already asked about that before.
 
 ### Youtube
 
@@ -59,7 +59,7 @@ The following courses were consulted:
 
 ## Usage and reproduction 
 
-- First off, the package. json has listed all the necessary tools for working with the project, so a simple "npm install" on the root folder sets up 50% of the development environment. All necessary scripts are listed in this file as well and have been need to be executed for everything to compile and work
+- First off, the package.json file has all the necessary tools for working with the project listed, so a simple "npm install" on the root folder sets up 50% of the development dependencies. All necessary scripts are listed in this file and need to be executed for everything to compile and work
 
 - Python must be installed on the computer and flask has to be added via a "pip3" command.
 
