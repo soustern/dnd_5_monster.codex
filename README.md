@@ -43,7 +43,11 @@ Stack Overflow was very useful for finding solutions about very specific bugs. O
 
 ### Youtube
 
+<<<<<<< HEAD
 The following channels were consulted:
+=======
+The following channels where consulted:
+>>>>>>> refs/remotes/origin/main
 
 - https://www.youtube.com/@naztronaut
 
@@ -51,7 +55,11 @@ The following channels were consulted:
 
 ### Courses
 
+<<<<<<< HEAD
 The following courses were consulted: 
+=======
+The following courses where consulted: 
+>>>>>>> refs/remotes/origin/main
 
 - https://www.udemy.com/course/advanced-css-and-sass/
 
@@ -80,4 +88,7 @@ What solved this was compacting the images to a smaller size.
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
