@@ -35,3 +35,7 @@
   text-decoration: none;
   text-decoration: underline;
 }
+
+%default-animation {
+  animation: appear 0.5s ease-in;
+}

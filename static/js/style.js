@@ -1,7 +1,6 @@
 // Run script once DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Select correct classes
-
   let form__input = document.querySelector(".form__input");
 
   let button = document.querySelector(".btn");
@@ -19,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".btn").style.opacity = "1";
     //
     document.querySelector(".footer").style.padding = "3rem";
+    //
+    // // Fix footer when modal opens
+    document.querySelector(".footer").style.transform = "translateY(0rem)";
   });
 
   button.addEventListener("click", function () {
@@ -32,5 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".header__img-area").style.maxWidth = "70rem";
     //
     document.querySelector(".btn").style.opacity = "0";
+    //
+    // // Reset footer position here
+    document.querySelector(".footer").style.transform = "translateY(-10rem)";
   });
 });

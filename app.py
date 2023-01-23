@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request
-from helpers import lookup
+from flask import Flask, render_template
 
 app = Flask(__name__)
 

@@ -16,6 +16,10 @@
   margin-top: auto;
   padding: 3rem;
 
+  // Im doing this to fiz footer on mobile
+  // // Try removing this and pushing to production to see what happens on mobile
+  transform: translateY(-10rem);
+
   &__grid {
     max-width: 100rem;
     margin: 0 auto;
@@ -31,7 +35,6 @@
   }
 
   // Apply responsiveness
-  @media (max-width: 1530px) {
-    padding: 0;
+  @media (max-width: 850px) {
   }
 }

@@ -2,6 +2,7 @@
   height: 50vh;
   width: 100%;
   position: relative;
+  background-color: rgba($color: #000000, $alpha: 0);
   background: transparent;
   transition: all 0.9s;
 
@@ -44,7 +45,7 @@
 
     // bcg img settings
     background-image: linear-gradient(transparent, $color-black 60%),
-      url(../img/background_img.jpg);
+      url(../img/background_img.png);
     background-size: cover;
     background-position: left;
 

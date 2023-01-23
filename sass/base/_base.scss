@@ -16,15 +16,9 @@ html {
   // currently 16px, 62.4% to be 10
   font-size: 62.5%;
 
-  // Fill whole HTML Document
-  background-image: linear-gradient(
-      to bottom,
-      rgba($color-primary-darker, 0.97),
-      rgba($color-black, 1)
-    ),
-    url(../img/background_img-2.jpg);
-  background-attachment: fixed;
+  @include html-backgrounds();
 
+  background-attachment: fixed;
   background-size: 150%;
   background-position: top;
   background-repeat: no-repeat;

@@ -7,11 +7,24 @@
 
 html {
   font-size: 62.5%;
-  background-image: linear-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.jpg);
+  background-image: -moz-linear-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.png);
+  background-image: -ms-linear-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.png);
+  background-image: -webkit-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.png);
+  background-image: -webkit-linear-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.png);
+  background-image: -o-linear-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.png);
+  background-image: linear-gradient(to bottom, rgba(22, 12, 32, 0.97), black), url(../img/background_img-2.png);
   background-attachment: fixed;
   background-size: 150%;
   background-position: top;
   background-repeat: no-repeat; }
+  @media (max-width: 1530px) {
+    html {
+      background-image: -moz-linear-gradient(to bottom, #160c20, black);
+      background-image: -ms-linear-gradient(to bottom, #160c20, black);
+      background-image: -webkit-gradient(to bottom, #160c20, black);
+      background-image: -webkit-linear-gradient(to bottom, #160c20, black);
+      background-image: -o-linear-gradient(to bottom, #160c20, black);
+      background-image: linear-gradient(to bottom, #160c20, black); } }
   html::-webkit-scrollbar {
     display: none; }
 
@@ -38,6 +51,12 @@ body {
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   text-decoration: underline; }
+
+@keyframes appear {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 body {
   font-family: "Roboto", sans-serif;
@@ -88,6 +107,7 @@ a {
   height: 50vh;
   width: 100%;
   position: relative;
+  background-color: rgba(0, 0, 0, 0);
   background: transparent;
   transition: all 0.9s; }
   .header__img-area {
@@ -112,7 +132,7 @@ a {
     display: inline-block;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(transparent, #000 60%), url(../img/background_img.jpg);
+    background-image: linear-gradient(transparent, #000 60%), url(../img/background_img.png);
     background-size: cover;
     background-position: left;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 20%);
@@ -175,7 +195,7 @@ a {
     .c-sheet__info--general-1 hr {
       border: none;
       height: 0.1rem;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: white;
       margin-inline-start: 0;
       margin-inline-end: 0; }
     .c-sheet__info--general-1 > *:not(:last-child) {
@@ -370,7 +390,7 @@ a {
     font-weight: 500;
     padding: 1.5rem 2rem;
     background-color: rgba(255, 255, 255, 0);
-    border: 0.1rem solid rgba(255, 255, 255, 0.7);
+    border: 0.1rem solid white;
     border-radius: 5px 5px 5px 5px;
     width: 100%; }
     .form__input:focus {
@@ -430,7 +450,8 @@ a {
   text-align: center;
   width: 100vw;
   margin-top: auto;
-  padding: 3rem; }
+  padding: 3rem;
+  transform: translateY(-10rem); }
   .footer__grid {
     max-width: 100rem;
     margin: 0 auto;
@@ -440,6 +461,3 @@ a {
     @media (max-width: 1530px) {
       .footer__grid {
         grid-template-columns: repeat(1, 1fr); } }
-  @media (max-width: 1530px) {
-    .footer {
-      padding: 0; } }
