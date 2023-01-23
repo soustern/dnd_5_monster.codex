@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".header").style.height = "0vh";
     //
     document.querySelector(".btn").style.opacity = "1";
+    //
+    document.querySelector(".footer").style.padding = "3rem";
   });
 
   button.addEventListener("click", function () {

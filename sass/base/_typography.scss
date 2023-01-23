@@ -12,6 +12,23 @@ body {
   letter-spacing: 0.1rem;
 }
 
+a {
+  color: inherit;
+
+  &:link {
+    @extend %default-link-style;
+  }
+  &:visited {
+    @extend %default-link-style;
+  }
+  &:hover {
+    @extend %default-link-style;
+  }
+  &:active {
+    @extend %default-link-style;
+  }
+}
+
 // HEADINGS
 
 // // h2
@@ -33,4 +50,11 @@ body {
   font-size: 500;
   font-weight: 500;
   line-height: 0;
+}
+
+// MISC
+
+// // Footer text
+.footer-text {
+  font-size: $font-size-300;
 }

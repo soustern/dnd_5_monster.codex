@@ -9,3 +9,29 @@
   width: 100%;
   padding: 0 3rem;
 }
+
+.footer {
+  text-align: center;
+  width: 100vw;
+  margin-top: auto;
+  padding: 3rem;
+
+  &__grid {
+    max-width: 100rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    // Apply responsiveness
+    @media (max-width: 1530px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  // Apply responsiveness
+  @media (max-width: 1530px) {
+    padding: 0;
+  }
+}

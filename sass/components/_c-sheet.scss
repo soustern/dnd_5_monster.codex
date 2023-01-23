@@ -367,6 +367,12 @@
           margin-left: 1rem;
           color: $color-primary-light;
         }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          text-align: center;
+          grid-column: span 4;
+        }
       }
     }
     &--s-abilities {
@@ -378,10 +384,11 @@
       gap: 2rem;
 
       transition: all 1s;
+
       // Style line under the name
       &-heading {
         text-align: center;
-        grid-column: span 4;
+        grid-column: span 2;
       }
 
       &-item {
@@ -391,6 +398,11 @@
         & > * > * {
           margin-left: 1rem;
           color: $color-primary-light;
+        }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-column: span 2;
         }
       }
     }
@@ -417,6 +429,11 @@
           margin-left: 1rem;
           color: $color-primary-light;
         }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-column: span 2;
+        }
       }
     }
     &--l-actions {
@@ -441,6 +458,11 @@
         & > * > * {
           margin-left: 1rem;
           color: $color-primary-light;
+        }
+
+        // Apply responsiveness
+        @media (max-width: 1530px) {
+          grid-column: span 2;
         }
       }
     }

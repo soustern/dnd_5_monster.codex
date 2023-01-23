@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // // // And distributes the correct information to the document
 // THIS SHOULD HAVE BEEN MULTIPLE FUNCTIONS, NOT ONE DOING EVERYTHING, BUT I DIGRESS
 async function lookup() {
-  //
+  // Call function to clear the screen
+  clear();
+
   // Get input value from the form
   let input = document.querySelector(".form__input").value;
 
@@ -262,23 +264,7 @@ async function lookup() {
 
   // // Proficiencies
 
-  // Select correct element by class
   let proficiencies = document.querySelector(".c-sheet__info--proficiencies");
-
-  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
-  // // The following line is necessary to remove what was created on a call that came before the current one
-  proficiencies.innerHTML = "";
-
-  // Since we removed everything, we must add the heading "Proficiencies again"
-  let proficiencies_heading = document.createElement("div");
-  proficiencies_heading.classList.add("c-sheet__info--proficiencies-heading");
-  proficiencies.appendChild(proficiencies_heading);
-
-  let heading = document.createElement("h2");
-  heading.classList.add("heading-primary");
-  proficiencies_heading.appendChild(heading);
-  // Add value of text
-  heading.innerHTML = "Proficiencies: ";
 
   // Iterate in the "json array" that is proficiencies
   json.proficiencies.forEach((item) => {
@@ -316,23 +302,7 @@ async function lookup() {
 
   // // Special Abilities
 
-  // Select correct element by class
   let s_abilities = document.querySelector(".c-sheet__info--s-abilities");
-
-  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
-  // // The following line is necessary to remove what was created on a call that came before the current one
-  s_abilities.innerHTML = "";
-
-  // Since we removed everything, we must add the heading "Proficiencies again"
-  let s_abilities_heading = document.createElement("div");
-  s_abilities_heading.classList.add("c-sheet__info--s-abilities-heading");
-  s_abilities.appendChild(s_abilities_heading);
-
-  let s_heading = document.createElement("h2");
-  s_heading.classList.add("heading-primary");
-  s_abilities_heading.appendChild(s_heading);
-  // Add value of text
-  s_heading.innerHTML = "Special Abilities: ";
 
   // Iterate in the "json array" that is proficiencies
   json.special_abilities.forEach((item) => {
@@ -370,23 +340,7 @@ async function lookup() {
 
   // // Actions
 
-  // Select correct element by class
   let actions = document.querySelector(".c-sheet__info--actions");
-
-  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
-  // // The following line is necessary to remove what was created on a call that came before the current one
-  actions.innerHTML = "";
-
-  // Since we removed everything, we must add the heading "Proficiencies again"
-  let actions_heading = document.createElement("div");
-  actions_heading.classList.add("c-sheet__info--actions-heading");
-  actions.appendChild(actions_heading);
-
-  let a_heading = document.createElement("h2");
-  a_heading.classList.add("heading-primary");
-  actions_heading.appendChild(a_heading);
-  // Add value of text
-  a_heading.innerHTML = "Actions: ";
 
   // Iterate in the "json array" that is proficiencies
   json.actions.forEach((item) => {
@@ -424,40 +378,24 @@ async function lookup() {
 
   // // Legendary Actions
 
-  // Select correct element by class
   let l_actions = document.querySelector(".c-sheet__info--l-actions");
 
-  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
-  // // The following line is necessary to remove what was created on a call that came before the current one
-  l_actions.innerHTML = "";
-
-  // Since we removed everything, we must add the heading "Proficiencies again"
-  let l_actions_heading = document.createElement("div");
-  l_actions_heading.classList.add("c-sheet__info--l-actions-heading");
-  l_actions.appendChild(l_actions_heading);
-
-  let l_heading = document.createElement("h2");
-  l_heading.classList.add("heading-primary");
-  l_actions_heading.appendChild(l_heading);
-  // Add value of text
-  l_heading.innerHTML = "Legendary Actions: ";
-
-  // Iterate in the "json array" that is proficiencies
   json.legendary_actions.forEach((item) => {
-    // Create the necessary elements the necessary amount of times
-    // // Create the element
     let l_actions_item = document.createElement("div");
-    // // Add class
+
     l_actions_item.classList.add("c-sheet__info--l-actions-item");
-    // // Append it to be a children of the selected parent
+
     l_actions.appendChild(l_actions_item);
 
     // // Repeat
     let l_actions__name = document.createElement("h3");
+
     l_actions__name.classList.add("l_actions__name");
-    // // Two classes, the same line two times
+
     l_actions__name.classList.add("heading-primary");
+
     l_actions_item.appendChild(l_actions__name);
+
     l_actions__name.innerHTML = item.name;
 
     // // Add value
@@ -488,4 +426,72 @@ function format_value(input) {
 
   // Return the newly formatted string but forcing lower case
   return input.toLowerCase();
+}
+
+// This functions clears some sections of the HTML document when called
+function clear() {
+  // Proficiencies
+
+  let proficiencies = document.querySelector(".c-sheet__info--proficiencies");
+
+  proficiencies.innerHTML = "";
+
+  let proficiencies_heading = document.createElement("div");
+  proficiencies_heading.classList.add("c-sheet__info--proficiencies-heading");
+  proficiencies.appendChild(proficiencies_heading);
+
+  let heading = document.createElement("h2");
+  heading.classList.add("heading-primary");
+  proficiencies_heading.appendChild(heading);
+  heading.innerHTML = "Proficiencies: ";
+
+  // Special Abilities
+
+  let s_abilities = document.querySelector(".c-sheet__info--s-abilities");
+
+  s_abilities.innerHTML = "";
+
+  let s_abilities_heading = document.createElement("div");
+  s_abilities_heading.classList.add("c-sheet__info--s-abilities-heading");
+  s_abilities.appendChild(s_abilities_heading);
+
+  let s_heading = document.createElement("h2");
+  s_heading.classList.add("heading-primary");
+  s_abilities_heading.appendChild(s_heading);
+  s_heading.innerHTML = "Special Abilities: ";
+
+  // Actions
+
+  let actions = document.querySelector(".c-sheet__info--actions");
+
+  actions.innerHTML = "";
+
+  let actions_heading = document.createElement("div");
+  actions_heading.classList.add("c-sheet__info--actions-heading");
+  actions.appendChild(actions_heading);
+
+  let a_heading = document.createElement("h2");
+  a_heading.classList.add("heading-primary");
+  actions_heading.appendChild(a_heading);
+  a_heading.innerHTML = "Actions: ";
+
+  // Legendary actions
+
+  // Select correct element by class
+  let l_actions = document.querySelector(".c-sheet__info--l-actions");
+
+  // Every time we send a request for a new monster, we must reset the data that was created on the previous one
+  // // The following line is necessary to remove what was created on a call that came before the current one
+  l_actions.innerHTML = "";
+
+  // Since we removed everything, we must add the heading "Proficiencies again"
+  let l_actions_heading = document.createElement("div");
+  l_actions_heading.classList.add("c-sheet__info--l-actions-heading");
+  l_actions.appendChild(l_actions_heading);
+
+  let l_heading = document.createElement("h2");
+  l_heading.classList.add("heading-primary");
+  l_actions_heading.appendChild(l_heading);
+  // Add value of text
+  l_heading.innerHTML = "Legendary Actions: ";
 }
