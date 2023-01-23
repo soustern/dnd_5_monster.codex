@@ -75,12 +75,7 @@ Deployment of the app was made entirely via Vercel CLI
 
 ### Problems
 
-During the proccess of deployment, some of the images returned a http error of 500 when trying to load.
+During the proccess of deployment, some images returned a http error of 500 when trying to load.
 What solved this was compacting the images to a smaller size.
 
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/main
