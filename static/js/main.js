@@ -82,7 +82,9 @@ async function lookup() {
 
   // Change armor class
   if (json.armor_class != undefined) {
-    armor_class__value.innerHTML = json.armor_class;
+    armor_class__value.innerHTML = json.armor_class[0].type
+      .concat(", ")
+      .concat(json.armor_class[0].value);
   } else {
     armor_class__value.innerHTML = "Not found";
   }
